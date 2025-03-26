@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import { FaCircleQuestion } from "react-icons/fa6";
+import React, { useEffect, useRef, useState } from "react";
+import { BiSolidHide } from "react-icons/bi";
+import { FaCircleQuestion, FaEye } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [Dates] = useState([
+  const [showText, setShowText] = useState(false);
+
+  const [showEye, setShowEye] = useState(false);
+
+  const [months] = useState([
     "Jan",
     "Feb",
     "Mar",
@@ -17,7 +22,7 @@ const Register = () => {
     "Nov",
     "Dec",
   ]);
-
+  // lopp for year
   const GenerateYears = () => {
     let years = [];
     for (let i = 2025; i >= 1905; i--) {
@@ -25,6 +30,40 @@ const Register = () => {
     }
     return years;
   };
+  // make state for every input
+  const [formField, setFormField] = useState({
+    email: "",
+    password: "",
+    f_name: "",
+    l_name: "",
+    date: "",
+    month: "",
+    year: "",
+    gender: "",
+  });
+
+  const { email, password, f_name, l_name, date, month, year, gender } =
+    formField;
+
+  const btnHandle = (e) => {
+    setFormField({
+      ...formField,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  useEffect(() => {
+    if (password.length > 0) {
+      setShowEye(true);
+    } else {
+      setShowEye(false);
+    }
+  }, [password]);
+
+  const myDate = new Date();
+  let newYear = myDate.getDate();
+  console.log(newYear);
+
   return (
     <>
       <div className="flex justify-center items-center my-10">
@@ -34,7 +73,7 @@ const Register = () => {
           width={220}
         />
       </div>
-      <div className="shadow-xl rounded-md bg-white mx-auto xl:w-[35%] lg:w-[40%] md:w-[50%] sm:w-[90%] h-[50%]">
+      <div className="shadow-xl rounded-md bg-white mx-auto xl:w-[30%] lg:w-[40%] md:w-[50%] sm:w-[90%] h-[50%]">
         <h1 className="text-2xl font-bold text-center ">
           Create a new account
         </h1>
@@ -44,13 +83,19 @@ const Register = () => {
         <hr className="border-0 bg-gray-200 h-[1px]" />
         <div className="grid grid-cols-2 ">
           <input
+            name="f_name"
+            value={f_name}
+            onChange={btnHandle}
             type="text"
-            className="rounded-md border border-gray-300 outline-0 px-2 py-2 m-3"
+            className="rounded-md border border-gray-300 outline-0 px-2 py-2 m-3 focus:border-blue-500 focus:border-2 "
             placeholder="First name"
           />
           <input
+            name="l_name"
+            value={l_name}
+            onChange={btnHandle}
             type="text"
-            className="rounded-md border border-gray-300 outline-0 px-2 py-2 m-3"
+            className="rounded-md border border-gray-300 outline-0 px-2 py-2 m-3 focus:border-blue-500 focus:border-2"
             placeholder="Surname"
           />
         </div>
@@ -59,13 +104,23 @@ const Register = () => {
         </p>
 
         <div className="grid grid-cols-3 mx-3 gap-2">
-          <select className="border border-gray-300 rounded-md  py-2 focus:border-blue-500 focus:border-2 ">
+          <select
+            name="date"
+            value={date}
+            onChange={btnHandle}
+            className="border border-gray-300 rounded-md  py-2 focus:border-blue-500 focus:border-2 "
+          >
             {Array.from({ length: 30 }).map((_, index) => {
               return <option value="index + 1">{index + 1}</option>;
             })}
           </select>
-          <select className="border border-gray-300 rounded-md  py-2 focus:border-blue-500 focus:border-2 ">
-            {Dates?.map((item, index) => {
+          <select
+            name="month"
+            value={month}
+            onChange={btnHandle}
+            className="border border-gray-300 rounded-md  py-2 focus:border-blue-500 focus:border-2 "
+          >
+            {months?.map((item, index) => {
               return (
                 <option value={item} key={index}>
                   {item}
@@ -73,7 +128,12 @@ const Register = () => {
               );
             })}
           </select>
-          <select className="border border-gray-300 rounded-md py-2 focus:border-blue-500 focus:border-2 ">
+          <select
+            name="year"
+            value={year}
+            onChange={btnHandle}
+            className="border border-gray-300 rounded-md py-2 focus:border-blue-500 focus:border-2 "
+          >
             {GenerateYears()?.map((item, index) => {
               return (
                 <option value={item} key={index}>
@@ -87,27 +147,62 @@ const Register = () => {
           Gender <FaCircleQuestion className="inline" />
         </p>
 
-        <div className="grid grid-cols-2 gap-2 m-3">
-          <div className="flex justify-between items-center border border-gray-300 rounded-md p-2">
+        <div className="grid grid-cols-2 gap-2 m-3 ">
+          <div className="flex justify-between items-center border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:border-2">
             <label htmlFor="">Female</label>
-            <input type="Radio" name="gender" />
+
+            <input
+              type="Radio"
+              name="gender"
+              value={"female"}
+              onChange={btnHandle}
+            />
           </div>
           <div className="flex justify-between items-center border border-gray-300 rounded-md p-2">
             <label htmlFor="">Male</label>
-            <input type="Radio" name="gender" />
+            <input
+              type="Radio"
+              name="gender"
+              value={"male"}
+              onChange={btnHandle}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-2 m-3">
           <input
+            name="email"
+            value={email}
+            onChange={btnHandle}
             type="text"
-            className="rounded-md border border-gray-300 w-full p-2"
+            className="rounded-md border border-gray-300 w-full p-2  outline-0 focus:border-2 focus:border-blue-500"
             placeholder="Mobile number or email address"
           />
-          <input
-            type="text"
-            className="rounded-md border border-gray-300 w-full p-2"
-            placeholder="New password"
-          />
+          <div className="relative">
+            <input
+              name="password"
+              value={password}
+              onChange={btnHandle}
+              type={!showText ? "text" : "password"}
+              className="rounded-md border border-gray-300 w-full p-2  outline-0 focus:border-2 focus:border-blue-500"
+              placeholder="New password"
+            />
+
+            {showText ? (
+              <BiSolidHide
+                onClick={() => setShowText(false)}
+                className={`absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-[20px]  ${
+                  !showEye && "hidden"
+                } `}
+              />
+            ) : (
+              <FaEye
+                onClick={() => setShowText(true)}
+                className={`absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-[20px] ${
+                  !showEye && "hidden"
+                } `}
+              />
+            )}
+          </div>
         </div>
         <p className="m-3 text-[12px] text-gray-500 w-[90%]">
           People who use our service may have uploaded your contact information

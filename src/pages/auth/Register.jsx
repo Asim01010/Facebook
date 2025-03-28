@@ -60,10 +60,6 @@ const Register = () => {
     }
   }, [password]);
 
-  const myDate = new Date();
-  let newYear = myDate.getDate();
-  console.log(newYear);
-
   return (
     <>
       <div className="flex justify-center items-center my-10">
@@ -147,7 +143,7 @@ const Register = () => {
           Gender <FaCircleQuestion className="inline" />
         </p>
 
-        <div className="grid grid-cols-2 gap-2 m-3 ">
+        <div className="grid grid-cols-3 gap-2 m-3 ">
           <div className="flex justify-between items-center border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:border-2">
             <label htmlFor="">Female</label>
 
@@ -167,7 +163,17 @@ const Register = () => {
               onChange={btnHandle}
             />
           </div>
+          <div className="flex justify-between items-center border border-gray-300 rounded-md p-2">
+            <label htmlFor="">Custom</label>
+            <input
+              type="Radio"
+              name="gender"
+              value={"custom"}
+              onChange={btnHandle}
+            />
+          </div>
         </div>
+        {}
         <div className="flex flex-col gap-2 m-3">
           <input
             name="email"

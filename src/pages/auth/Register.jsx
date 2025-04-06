@@ -173,7 +173,22 @@ const Register = () => {
             />
           </div>
         </div>
-        {}
+        <div className="flex flex-col gap-2 m-3">
+          <select
+            name="email"
+            value={email}
+            onChange={btnHandle}
+            type="text"
+            className="rounded-md border border-gray-300 w-full p-2  outline-0 focus:border-2 focus:border-blue-500"
+            placeholder="Mobile number or email address"
+          />
+          {[
+            `She:"Wish her a happy birthday",He:"Wish him a happy birthday",They:"Wish them a happy birthday"`,
+          ].map((item, index) => {
+            return <option value=""></option>;
+          })}
+          <selec />
+        </div>
         <div className="flex flex-col gap-2 m-3">
           <input
             name="email"

@@ -8,31 +8,31 @@ export const navbar_data = [
   {
     id: 1,
     title: "Home",
-    icon: <GoHome />,
+    icon: <GoHome size={30} />,
     link: "/home",
   },
   {
     id: 2,
     title: "Friends",
-    icon: <BsPeople />,
+    icon: <BsPeople size={30} />,
     link: "/friends",
   },
   {
     id: 3,
     title: "Video",
-    icon: <PiVideoBold />,
+    icon: <PiVideoBold size={30} />,
     link: "/video",
   },
   {
     id: 4,
     title: "Marketplace",
-    icon: <GiBasket />,
+    icon: <GiBasket size={30} />,
     link: "/marketplace",
   },
   {
     id: 5,
     title: "Gaming",
-    icon: <RiGamepadLine />,
+    icon: <RiGamepadLine size={30} />,
     link: "/gaming",
   },
 ];

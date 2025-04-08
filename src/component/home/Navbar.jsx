@@ -73,15 +73,14 @@ const Navbar = () => {
           {navbar_data?.map((item, index) => {
             return (
               <>
-                <li
-                  key={index}
-                  className="relative px-10 py-2 group hover:bg-gray-200 rounded-xl cursor-pointer"
-                >
-                  {item.icon}
-                  <div className="absolute bg-black/60 rounded-md text-sm  text-white p-2 translate-y-[30%] -translate-x-[20%] transition-all duration-200 opacity-0 delay-150 group-hover:opacity-100 active:text-blue-500">
-                    {item.title}
-                  </div>
-                </li>
+                <div key={index}>
+                  <li className="relative px-10 py-2 group hover:bg-gray-200 rounded-xl cursor-pointer">
+                    {item.icon}
+                    <div className="absolute bg-black/60 rounded-md text-sm  text-white p-2 translate-y-[30%] -translate-x-[20%] transition-all duration-200 opacity-0 delay-150 group-hover:opacity-100 active:text-blue-500">
+                      {item.title}
+                    </div>
+                  </li>
+                </div>
               </>
             );
           })}

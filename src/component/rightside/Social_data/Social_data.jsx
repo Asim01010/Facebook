@@ -1,4 +1,4 @@
-const social_data = [
+export const Social_data = [
   {
     id: 1,
     title: "Social",
@@ -80,6 +80,85 @@ const social_data = [
         icons: "/public/social_images/market.png",
         title: "Marketplace",
         description: "Buy and sell in your community.",
+      },
+    ],
+  },
+  {
+    id: 15,
+    title: "Personal",
+    list: [
+      {
+        id: 16,
+        icons: "/public/social_images/activity.png",
+        title: "Recent ad activity",
+        desc: "See all of the ads you’ve interacted with on Facebook.",
+      },
+      {
+        id: 17,
+        icons: "/public/social_images/memories.png",
+        title: "Memories",
+        desc: "Browse your old photos, videos and posts on Facebook.",
+      },
+      {
+        id: 18,
+        icons: "/public/social_images/saved.png",
+        title: "Saved",
+        desc: "Find posts, photos and videos that you’ve saved for later.",
+      },
+    ],
+  },
+  {
+    id: 19,
+    title: "Professional",
+    list: [
+      {
+        id: 20,
+        icons: "/public/social_images/manager.png",
+        title: "Ads Manager",
+        desc: "Create, manage and track the performance of your ads.",
+      },
+    ],
+  },
+  {
+    id: 21,
+    title: "Community resources",
+    list: [
+      {
+        id: 22,
+        icons: "/public/social_images/climate.png",
+        title: "Climate Science Centre",
+        desc: "Learn about climate change and its effects.",
+      },
+      {
+        id: 22,
+        icons: "/public/social_images/fundraises.png",
+        title: "Fundraisers",
+        desc: "Donate and raise money for charities and personal causes.",
+      },
+    ],
+  },
+  {
+    id: 23,
+
+    title: "More from Meta",
+    items: [
+      {
+        id: 24,
+        title: "Meta AI",
+        icons: "/public/social_images/meta.png",
+        desc: "Ask questions, brainstorm ideas, create any image you can imagine and more.",
+      },
+      {
+        id: 25,
+        icons: "/public/social_images/kids.png",
+        title: "Messenger Kids",
+        description: "Let children message close friends and family.",
+      },
+      {
+        id: 26,
+        icons: "/public/social_images/whatsapp.png",
+        name: "WhatsApp",
+        description: "Message and call people privately on your computer.",
       },
     ],
   },

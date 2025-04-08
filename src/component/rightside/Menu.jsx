@@ -4,7 +4,7 @@ import { Social_data } from "./Social_data/Social_data";
 
 const Menu = () => {
   return (
-    <div className="bg-gray-50 rounded-md shadow-xl px-5 py-3 absolute -translate-x-full w-[40%] top-13 ">
+    <div className="bg-gray-50 rounded-xl shadow-xl px-5 py-3 absolute -translate-x-[90%] w-[40%] top-13  h-[90vh] overflow-y-scroll">
       <div className="text-2xl font-bold py-2">Menu</div>
       <div className="grid md:grid-cols-3 gap-2 grid-cols-1">
         <div className="col-span-2 bg-white rounded-md p-3 flex flex-col justify-center items-center ">
@@ -17,21 +17,29 @@ const Menu = () => {
             />
           </div>
 
-          <ul className="flex flex-col unstyled my-5 gap-3 list-none w-full">
+          <ul className="flex flex-col unstyled my-5 gap-3 list-none w-full ">
             {Social_data?.map((item, index) => {
               return (
-                <div key={index}>
-                  <li className="text-md font-semibold capitalize text-gray-800">
+                <div key={index} className="">
+                  <li className="text-md font-semibold capitalize text-gray-800 ">
                     {item.title}
                   </li>
                   {/* nested list */}
                   {item?.list?.map((item2, index2) => {
                     return (
-                      <div key={index2} className="flex gap-2 p-2 items-center">
+                      <div
+                        key={index2}
+                        className="flex gap-2 p-2 items-center hover:bg-gray-100 rounded-md cursor-pointer"
+                      >
                         <img src={item2?.icons} width={30} alt="" />
+                        <div className="flex flex-col  px-2">
+                          <h5 className="font-semibold">{item2.heading}</h5>
+                          <p className="text-[14px]">{item2.desc}</p>
+                        </div>
                       </div>
                     );
                   })}
+                  {index !== Social_data?.length - 1 && <hr className="hr" />}
                 </div>
               );
             })}

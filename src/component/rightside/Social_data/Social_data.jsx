@@ -2,7 +2,7 @@ export const Social_data = [
   {
     id: 1,
     title: "Social",
-    item: [
+    list: [
       {
         id: 2,
         icons: "/social_images/events.png",
@@ -72,14 +72,14 @@ export const Social_data = [
       {
         id: 13,
         icons: "/public/social_images/orders.png",
-        title: "Orders and payments",
+        heading: "Orders and payments",
         desc: "A seamless, secure way to pay in the apps you already use.",
       },
       {
         id: 14,
         icons: "/public/social_images/market.png",
-        title: "Marketplace",
-        description: "Buy and sell in your community.",
+        heading: "Marketplace",
+        desc: "Buy and sell in your community.",
       },
     ],
   },
@@ -90,19 +90,19 @@ export const Social_data = [
       {
         id: 16,
         icons: "/public/social_images/activity.png",
-        title: "Recent ad activity",
+        heading: "Recent ad activity",
         desc: "See all of the ads you’ve interacted with on Facebook.",
       },
       {
         id: 17,
         icons: "/public/social_images/memories.png",
-        title: "Memories",
+        heading: "Memories",
         desc: "Browse your old photos, videos and posts on Facebook.",
       },
       {
         id: 18,
         icons: "/public/social_images/saved.png",
-        title: "Saved",
+        heading: "Saved",
         desc: "Find posts, photos and videos that you’ve saved for later.",
       },
     ],
@@ -114,7 +114,7 @@ export const Social_data = [
       {
         id: 20,
         icons: "/public/social_images/manager.png",
-        title: "Ads Manager",
+        heading: "Ads Manager",
         desc: "Create, manage and track the performance of your ads.",
       },
     ],
@@ -126,13 +126,13 @@ export const Social_data = [
       {
         id: 22,
         icons: "/public/social_images/climate.png",
-        title: "Climate Science Centre",
+        heading: "Climate Science Centre",
         desc: "Learn about climate change and its effects.",
       },
       {
         id: 22,
         icons: "/public/social_images/fundraises.png",
-        title: "Fundraisers",
+        heading: "Fundraisers",
         desc: "Donate and raise money for charities and personal causes.",
       },
     ],
@@ -141,24 +141,24 @@ export const Social_data = [
     id: 23,
 
     title: "More from Meta",
-    items: [
+    list: [
       {
         id: 24,
-        title: "Meta AI",
+        heading: "Meta AI",
         icons: "/public/social_images/meta.png",
         desc: "Ask questions, brainstorm ideas, create any image you can imagine and more.",
       },
       {
         id: 25,
         icons: "/public/social_images/kids.png",
-        title: "Messenger Kids",
-        description: "Let children message close friends and family.",
+        heading: "Messenger Kids",
+        desc: "Let children message close friends and family.",
       },
       {
         id: 26,
         icons: "/public/social_images/whatsapp.png",
-        name: "WhatsApp",
-        description: "Message and call people privately on your computer.",
+        heading: "WhatsApp",
+        desc: "Message and call people privately on your computer.",
       },
     ],
   },

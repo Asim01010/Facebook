@@ -6,7 +6,7 @@ import { create_data } from "./Social_data/Create_data";
 const Menu = () => {
   return (
     <>
-      {/* <div className=" fixed top-0 bg-transparent left-0 min-h-screen w-full"></div> */}
+      <div className=" fixed top-0 bg-red-500 left-0 min-h-screen w-full"></div>
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-gray-50 rounded-xl shadow-xl px-5  absolute -translate-x-[68%] w-[40%] top-13  h-[90vh] overflow-y-auto overflow-hidden "

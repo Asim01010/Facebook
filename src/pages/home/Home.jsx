@@ -6,6 +6,13 @@ const Home = () => {
     <>
       <navbar className="flex flex-between items-center">
         <Navbar />
+        {/* main content page */}
+        {/* sidebar */}
+        <Sidebar />
+        {/* maincontent */}
+        <MainContent />
+        {/* ad content  */}
+        <AdContent />
       </navbar>
     </>
   );

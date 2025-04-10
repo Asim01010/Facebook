@@ -18,9 +18,12 @@ import { IoMdArrowBack } from "react-icons/io";
 import { navbar_data } from "./data/NavbarData";
 import { HiBell } from "react-icons/hi";
 import Menu from "../rightside/Menu";
+import AccountSetting from "../rightside/AccountSetting";
 
 const Navbar = () => {
   const [focused, setFocused] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [accountset, setAccountSet] = useState(false);
   return (
     <>
       <nav className="flex justify-between items-center  py-1  w-full shadow-md bg-white">
@@ -90,10 +93,17 @@ const Navbar = () => {
 
         <div className="flex gap-3 pe-5  text-gray-800">
           {/* grid */}
-          <div className="flex justify-center items-center bg-gray-300/70 hover:bg-gray-300/100 h-[40px] w-[40px] rounded-full cursor-pointer ">
+
+          <div
+            onClick={() => setMenu(!menu)}
+            className={`flex justify-center items-center bg-gray-300/70 hover:bg-gray-300/100 h-[40px] w-[40px] rounded-full cursor-pointer ${
+              menu && "text-blue-500 bg-blue-100 hover:bg-blue-200"
+            } `}
+          >
             <CgMenuGridR size={25} />
           </div>
-          <Menu />
+          {menu && <Menu />}
+
           {/* Messenger */}
           <div className="flex justify-center items-center bg-gray-300/70  hover:bg-gray-300/100 h-[40px] w-[40px] rounded-full cursor-pointer">
             <FaFacebookMessenger size={20} />
@@ -103,7 +113,10 @@ const Navbar = () => {
             <HiBell size={20} />
           </div>
           {/* user */}
-          <div className="flex justify-center items-center bg-gray-300/70 group  hover:bg-gray-300/100 h-[40px] w-[40px] rounded-full cursor-pointer  relative border border-gray-400">
+          <div
+            onClick={() => setAccountSet(!accountset)}
+            className="flex justify-center items-center bg-gray-300/70 group  hover:bg-gray-300/100 h-[40px] w-[40px] rounded-full cursor-pointer  relative border border-gray-400"
+          >
             <FaUser size={22} className=" text-gray-600 " />
             <div className="bg-gray-200 h-[13px] w-[13px] absolute  rounded-full flex justify-center items-center text-gray-500 border-2 border-white translate-y-4 translate-x-3  ">
               <div className="absolute rounded-lg bg-black/80 translate-y-[80%] group-hover:opacity-100  -translate-x-2 text-[10px] text-white p-2 opacity-0 duration-100">
@@ -111,6 +124,7 @@ const Navbar = () => {
               </div>
               <FaAngleDown />
             </div>
+            {accountset && <AccountSetting />}
           </div>
         </div>
       </nav>

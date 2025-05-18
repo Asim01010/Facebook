@@ -1,0 +1,22 @@
+@import "tailwindcss";
+body {
+  background-color: #f2f4f7;
+}
+.hr {
+  border: 0px !important;
+  background-color: rgb(227, 227, 227) !important;
+  height: 1px !important;
+  margin: 5px 0 !important;
+}
+.postHolder::placeholder {
+  color: gray;
+  font-size: 20px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.postHolder {
+  resize: none;
+  padding: 5px;
+}
